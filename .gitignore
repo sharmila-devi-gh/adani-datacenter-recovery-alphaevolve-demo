@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store
+*.log
+artifacts/*.json
+artifacts/*.jsonl
+artifacts/*.patch
+artifacts/evolved_solver.py
+artifacts/baseline_solver.py
+!artifacts/.gitkeep

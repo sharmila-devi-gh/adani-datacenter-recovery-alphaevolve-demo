@@ -1,0 +1,4572 @@
+{
+  "scenario_id": "T04",
+  "split": "train",
+  "description": "Synthetic DC West-3 (85 tasks): Mid-build customer spec change (Water-to-Air cooling redesign) adding 3 rework packages & 26d chiller slip",
+  "tasks": [
+    {
+      "task_id": "P6-CIV-001",
+      "name": "Civil & Foundation Pkg 01 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [],
+      "fim_item_id": null,
+      "baseline_start_day": 0,
+      "baseline_end_day": 8,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.441,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 1.117,
+          "crew_by_trade": {
+            "CIVIL": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.513,
+          "crew_by_trade": {
+            "CIVIL": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-002",
+      "name": "Civil & Foundation Pkg 02 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [],
+      "fim_item_id": null,
+      "baseline_start_day": 0,
+      "baseline_end_day": 18,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.583,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.154,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.616,
+          "crew_by_trade": {
+            "CIVIL": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-003",
+      "name": "Civil & Foundation Pkg 03 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-002"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 18,
+      "baseline_end_day": 33,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 17
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.472,
+          "crew_by_trade": {
+            "CIVIL": 17
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.732,
+          "crew_by_trade": {
+            "CIVIL": 26
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 1.13,
+          "crew_by_trade": {
+            "CIVIL": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-004",
+      "name": "Civil & Foundation Pkg 04 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-003"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 33,
+      "baseline_end_day": 49,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.336,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.75,
+          "crew_by_trade": {
+            "CIVIL": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.019,
+          "crew_by_trade": {
+            "CIVIL": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-005",
+      "name": "Civil & Foundation Pkg 05 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-004"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 49,
+      "baseline_end_day": 59,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.516,
+          "crew_by_trade": {
+            "CIVIL": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.266,
+          "crew_by_trade": {
+            "CIVIL": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.598,
+          "crew_by_trade": {
+            "CIVIL": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-006",
+      "name": "Civil & Foundation Pkg 06 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [],
+      "fim_item_id": null,
+      "baseline_start_day": 0,
+      "baseline_end_day": 10,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.227,
+          "crew_by_trade": {
+            "CIVIL": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.432,
+          "crew_by_trade": {
+            "CIVIL": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.63,
+          "crew_by_trade": {
+            "CIVIL": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-007",
+      "name": "Civil & Foundation Pkg 07 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-006"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 10,
+      "baseline_end_day": 26,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.499,
+          "crew_by_trade": {
+            "CIVIL": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.997,
+          "crew_by_trade": {
+            "CIVIL": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.588,
+          "crew_by_trade": {
+            "CIVIL": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-008",
+      "name": "Civil & Foundation Pkg 08 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-006"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 10,
+      "baseline_end_day": 27,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.271,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.528,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.024,
+          "crew_by_trade": {
+            "CIVIL": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-009",
+      "name": "Civil & Foundation Pkg 09 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [],
+      "fim_item_id": null,
+      "baseline_start_day": 26,
+      "baseline_end_day": 44,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 14
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.234,
+          "crew_by_trade": {
+            "CIVIL": 14
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.538,
+          "crew_by_trade": {
+            "CIVIL": 22
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.837,
+          "crew_by_trade": {
+            "CIVIL": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-010",
+      "name": "Civil & Foundation Pkg 10 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-009"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 44,
+      "baseline_end_day": 58,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 15
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.479,
+          "crew_by_trade": {
+            "CIVIL": 15
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.728,
+          "crew_by_trade": {
+            "CIVIL": 23
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 1.156,
+          "crew_by_trade": {
+            "CIVIL": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-011",
+      "name": "Civil & Foundation Pkg 11 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-010"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 58,
+      "baseline_end_day": 66,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.476,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.762,
+          "crew_by_trade": {
+            "CIVIL": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.078,
+          "crew_by_trade": {
+            "CIVIL": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-012",
+      "name": "Civil & Foundation Pkg 12 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-011"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 66,
+      "baseline_end_day": 77,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.257,
+          "crew_by_trade": {
+            "CIVIL": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.476,
+          "crew_by_trade": {
+            "CIVIL": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.643,
+          "crew_by_trade": {
+            "CIVIL": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-CIV-013",
+      "name": "Civil & Foundation Pkg 13 (SUBSTRUCTURE)",
+      "wbs_stage": "CIVIL",
+      "work_front_zone": "SUBSTRUCTURE",
+      "predecessors": [
+        "P6-CIV-012"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 77,
+      "baseline_end_day": 93,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.392,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.683,
+          "crew_by_trade": {
+            "CIVIL": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.161,
+          "crew_by_trade": {
+            "CIVIL": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-014",
+      "name": "Core & Shell Pkg 01 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-013"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 93,
+      "baseline_end_day": 101,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.247,
+          "crew_by_trade": {
+            "CIVIL": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.461,
+          "crew_by_trade": {
+            "CIVIL": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.77,
+          "crew_by_trade": {
+            "CIVIL": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-015",
+      "name": "Core & Shell Pkg 02 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-013"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 93,
+      "baseline_end_day": 109,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "CIVIL": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.276,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "CIVIL": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.545,
+          "crew_by_trade": {
+            "HV_ELEC": 26,
+            "CIVIL": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.736,
+          "crew_by_trade": {
+            "HV_ELEC": 8,
+            "CIVIL": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-016",
+      "name": "Core & Shell Pkg 03 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-010"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 59,
+      "baseline_end_day": 78,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 19,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.435,
+          "crew_by_trade": {
+            "CIVIL": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.996,
+          "crew_by_trade": {
+            "CIVIL": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.385,
+          "crew_by_trade": {
+            "CIVIL": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-017",
+      "name": "Core & Shell Pkg 04 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-009"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 44,
+      "baseline_end_day": 55,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.467,
+          "crew_by_trade": {
+            "HV_ELEC": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.348,
+          "crew_by_trade": {
+            "HV_ELEC": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.574,
+          "crew_by_trade": {
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-018",
+      "name": "Core & Shell Pkg 05 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-003",
+        "P6-COR-016"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 78,
+      "baseline_end_day": 86,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 14
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.533,
+          "crew_by_trade": {
+            "CIVIL": 14
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.991,
+          "crew_by_trade": {
+            "CIVIL": 22
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.281,
+          "crew_by_trade": {
+            "CIVIL": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-019",
+      "name": "Core & Shell Pkg 06 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-012",
+        "P6-COR-018"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 86,
+      "baseline_end_day": 102,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "CIVIL": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.24,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "CIVIL": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.505,
+          "crew_by_trade": {
+            "HV_ELEC": 20,
+            "CIVIL": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.806,
+          "crew_by_trade": {
+            "HV_ELEC": 6,
+            "CIVIL": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-020",
+      "name": "Core & Shell Pkg 07 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-011",
+        "P6-COR-018"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 86,
+      "baseline_end_day": 100,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 15
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.374,
+          "crew_by_trade": {
+            "CIVIL": 15
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.828,
+          "crew_by_trade": {
+            "CIVIL": 23
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 1.175,
+          "crew_by_trade": {
+            "CIVIL": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-021",
+      "name": "Core & Shell Pkg 08 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-005"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 59,
+      "baseline_end_day": 69,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.196,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.415,
+          "crew_by_trade": {
+            "HV_ELEC": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.644,
+          "crew_by_trade": {
+            "HV_ELEC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-022",
+      "name": "Core & Shell Pkg 09 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-005",
+        "P6-COR-021"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 77,
+      "baseline_end_day": 89,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.502,
+          "crew_by_trade": {
+            "CIVIL": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.923,
+          "crew_by_trade": {
+            "CIVIL": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.428,
+          "crew_by_trade": {
+            "CIVIL": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-023",
+      "name": "Core & Shell Pkg 10 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-005"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 59,
+      "baseline_end_day": 67,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "CIVIL": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.283,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "CIVIL": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.669,
+          "crew_by_trade": {
+            "HV_ELEC": 23,
+            "CIVIL": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.189,
+          "crew_by_trade": {
+            "HV_ELEC": 7,
+            "CIVIL": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-024",
+      "name": "Core & Shell Pkg 11 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-004",
+        "P6-COR-022"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 100,
+      "baseline_end_day": 112,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.476,
+          "crew_by_trade": {
+            "CIVIL": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.823,
+          "crew_by_trade": {
+            "CIVIL": 19,
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.556,
+          "crew_by_trade": {
+            "CIVIL": 5,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-025",
+      "name": "Core & Shell Pkg 12 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-004",
+        "P6-CIV-010"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 102,
+      "baseline_end_day": 120,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 18,
+            "CIVIL": 6
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.396,
+          "crew_by_trade": {
+            "HV_ELEC": 18,
+            "CIVIL": 6
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.676,
+          "crew_by_trade": {
+            "HV_ELEC": 28,
+            "CIVIL": 9
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.892,
+          "crew_by_trade": {
+            "HV_ELEC": 8,
+            "CIVIL": 3
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-026",
+      "name": "Core & Shell Pkg 13 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-005",
+        "P6-CIV-009"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 67,
+      "baseline_end_day": 76,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.299,
+          "crew_by_trade": {
+            "CIVIL": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.514,
+          "crew_by_trade": {
+            "CIVIL": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.967,
+          "crew_by_trade": {
+            "CIVIL": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-027",
+      "name": "Core & Shell Pkg 14 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-001",
+        "P6-CIV-003",
+        "P6-COR-025"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 120,
+      "baseline_end_day": 128,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.303,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.653,
+          "crew_by_trade": {
+            "HV_ELEC": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.809,
+          "crew_by_trade": {
+            "HV_ELEC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-028",
+      "name": "Core & Shell Pkg 15 (DATA_HALL_1)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-CIV-002"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 109,
+      "baseline_end_day": 125,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "CIVIL": 17,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.478,
+          "crew_by_trade": {
+            "CIVIL": 17,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 1.04,
+          "crew_by_trade": {
+            "CIVIL": 26,
+            "HV_ELEC": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.29,
+          "crew_by_trade": {
+            "CIVIL": 8,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COR-029",
+      "name": "Core & Shell Pkg 16 (DATA_HALL_2)",
+      "wbs_stage": "CORE_SHELL",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-CIV-003",
+        "P6-CIV-005"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 67,
+      "baseline_end_day": 75,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 14
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.287,
+          "crew_by_trade": {
+            "HV_ELEC": 14
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.73,
+          "crew_by_trade": {
+            "HV_ELEC": 22
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.973,
+          "crew_by_trade": {
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-030",
+      "name": "HV Power & UPS/PDU Pkg 01 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-023"
+      ],
+      "fim_item_id": "HV_SWITCHGEAR",
+      "baseline_start_day": 69,
+      "baseline_end_day": 83,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.225,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.437,
+          "crew_by_trade": {
+            "HV_ELEC": 23,
+            "BMS_CONTROLS": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.659,
+          "crew_by_trade": {
+            "HV_ELEC": 7,
+            "BMS_CONTROLS": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-031",
+      "name": "HV Power & UPS/PDU Pkg 02 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-017"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 55,
+      "baseline_end_day": 68,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.274,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.696,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.975,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-032",
+      "name": "HV Power & UPS/PDU Pkg 03 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-016"
+      ],
+      "fim_item_id": "UPS_PDU_RACKS",
+      "baseline_start_day": 78,
+      "baseline_end_day": 92,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.206,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.474,
+          "crew_by_trade": {
+            "HV_ELEC": 23,
+            "BMS_CONTROLS": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.617,
+          "crew_by_trade": {
+            "HV_ELEC": 7,
+            "BMS_CONTROLS": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-033",
+      "name": "HV Power & UPS/PDU Pkg 04 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-016",
+        "P6-MEP-031"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 78,
+      "baseline_end_day": 86,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 7
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.581,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 7
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.883,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.584,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 3
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-034",
+      "name": "HV Power & UPS/PDU Pkg 05 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-016"
+      ],
+      "fim_item_id": "GENSET_BANK",
+      "baseline_start_day": 112,
+      "baseline_end_day": 128,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.395,
+          "crew_by_trade": {
+            "HV_ELEC": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.749,
+          "crew_by_trade": {
+            "HV_ELEC": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.014,
+          "crew_by_trade": {
+            "HV_ELEC": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-035",
+      "name": "HV Power & UPS/PDU Pkg 06 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-026"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 83,
+      "baseline_end_day": 103,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 20,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.319,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.656,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.814,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-036",
+      "name": "HV Power & UPS/PDU Pkg 07 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-028",
+        "P6-COR-029",
+        "P6-MEP-034"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 128,
+      "baseline_end_day": 139,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.336,
+          "crew_by_trade": {
+            "HV_ELEC": 15
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.671,
+          "crew_by_trade": {
+            "HV_ELEC": 23
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.899,
+          "crew_by_trade": {
+            "HV_ELEC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-037",
+      "name": "HV Power & UPS/PDU Pkg 08 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-022",
+        "P6-MEP-036"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 139,
+      "baseline_end_day": 154,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.415,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.984,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 19,
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 1.442,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-038",
+      "name": "HV Power & UPS/PDU Pkg 09 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-022"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 128,
+      "baseline_end_day": 145,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.288,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.661,
+          "crew_by_trade": {
+            "HV_ELEC": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.922,
+          "crew_by_trade": {
+            "HV_ELEC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-039",
+      "name": "HV Power & UPS/PDU Pkg 10 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-014",
+        "P6-COR-021",
+        "P6-MEP-038"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 145,
+      "baseline_end_day": 155,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.533,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.069,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.431,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-040",
+      "name": "HV Power & UPS/PDU Pkg 11 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-016",
+        "P6-COR-022"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 139,
+      "baseline_end_day": 157,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 17
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.484,
+          "crew_by_trade": {
+            "HV_ELEC": 17
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.876,
+          "crew_by_trade": {
+            "HV_ELEC": 26
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.333,
+          "crew_by_trade": {
+            "HV_ELEC": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-041",
+      "name": "HV Power & UPS/PDU Pkg 12 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-018"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 92,
+      "baseline_end_day": 108,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.185,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.413,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.617,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-042",
+      "name": "HV Power & UPS/PDU Pkg 13 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-022",
+        "P6-COR-024",
+        "P6-MEP-041"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 145,
+      "baseline_end_day": 163,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.621,
+          "crew_by_trade": {
+            "HV_ELEC": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.957,
+          "crew_by_trade": {
+            "HV_ELEC": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.756,
+          "crew_by_trade": {
+            "HV_ELEC": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-043",
+      "name": "HV Power & UPS/PDU Pkg 14 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-027",
+        "P6-MEP-041"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 154,
+      "baseline_end_day": 173,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 19,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.478,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.264,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 1.635,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-044",
+      "name": "HV Power & UPS/PDU Pkg 15 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-016",
+        "P6-MEP-042"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 163,
+      "baseline_end_day": 180,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 12,
+            "BMS_CONTROLS": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.353,
+          "crew_by_trade": {
+            "HV_ELEC": 12,
+            "BMS_CONTROLS": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.817,
+          "crew_by_trade": {
+            "HV_ELEC": 19,
+            "BMS_CONTROLS": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.112,
+          "crew_by_trade": {
+            "HV_ELEC": 5,
+            "BMS_CONTROLS": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-045",
+      "name": "HV Power & UPS/PDU Pkg 16 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-017",
+        "P6-MEP-044"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 180,
+      "baseline_end_day": 197,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 7,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.523,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 7,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.124,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.633,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 3,
+            "HV_ELEC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-046",
+      "name": "HV Power & UPS/PDU Pkg 17 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-022"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 157,
+      "baseline_end_day": 168,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.458,
+          "crew_by_trade": {
+            "HV_ELEC": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.293,
+          "crew_by_trade": {
+            "HV_ELEC": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.897,
+          "crew_by_trade": {
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-047",
+      "name": "HV Power & UPS/PDU Pkg 18 (DATA_HALL_2)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COR-022",
+        "P6-MEP-046"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 168,
+      "baseline_end_day": 184,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.401,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 10,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.711,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 16,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.901,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 4,
+            "HV_ELEC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-048",
+      "name": "HV Power & UPS/PDU Pkg 19 (SUBSTATION_HV)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "SUBSTATION_HV",
+      "predecessors": [
+        "P6-COR-019",
+        "P6-COR-025",
+        "P6-MEP-047"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 184,
+      "baseline_end_day": 204,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 20,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.393,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.625,
+          "crew_by_trade": {
+            "HV_ELEC": 26,
+            "BMS_CONTROLS": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.933,
+          "crew_by_trade": {
+            "HV_ELEC": 8,
+            "BMS_CONTROLS": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-MEP-049",
+      "name": "HV Power & UPS/PDU Pkg 20 (DATA_HALL_1)",
+      "wbs_stage": "MEP_POWER",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COR-018",
+        "P6-COR-029",
+        "P6-MEP-048"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 204,
+      "baseline_end_day": 213,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 13,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.423,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 13,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.835,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 20,
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.095,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 6,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-050",
+      "name": "Chiller & Cooling Plant Pkg 01 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-MEP-033"
+      ],
+      "fim_item_id": "CHILLER_PLANT_A",
+      "baseline_start_day": 86,
+      "baseline_end_day": 101,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 13
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.281,
+          "crew_by_trade": {
+            "MEP_HVAC": 13
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.632,
+          "crew_by_trade": {
+            "MEP_HVAC": 20
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.787,
+          "crew_by_trade": {
+            "MEP_HVAC": 6
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-051",
+      "name": "Chiller & Cooling Plant Pkg 02 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-MEP-032"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 163,
+      "baseline_end_day": 176,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.44,
+          "crew_by_trade": {
+            "HV_ELEC": 15
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.733,
+          "crew_by_trade": {
+            "HV_ELEC": 23
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.956,
+          "crew_by_trade": {
+            "HV_ELEC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-052",
+      "name": "Chiller & Cooling Plant Pkg 03 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-MEP-033"
+      ],
+      "fim_item_id": "CHILLER_PLANT_B",
+      "baseline_start_day": 125,
+      "baseline_end_day": 137,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 11,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.362,
+          "crew_by_trade": {
+            "MEP_HVAC": 11,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.69,
+          "crew_by_trade": {
+            "MEP_HVAC": 17,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.238,
+          "crew_by_trade": {
+            "MEP_HVAC": 5,
+            "HV_ELEC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-053",
+      "name": "Chiller & Cooling Plant Pkg 04 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-COO-051",
+        "P6-MEP-033"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 176,
+      "baseline_end_day": 192,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "MEP_HVAC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.373,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "MEP_HVAC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.619,
+          "crew_by_trade": {
+            "HV_ELEC": 20,
+            "MEP_HVAC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.941,
+          "crew_by_trade": {
+            "HV_ELEC": 6,
+            "MEP_HVAC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-054",
+      "name": "Chiller & Cooling Plant Pkg 05 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-053",
+        "P6-MEP-048"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 204,
+      "baseline_end_day": 220,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.295,
+          "crew_by_trade": {
+            "MEP_HVAC": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.563,
+          "crew_by_trade": {
+            "MEP_HVAC": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.864,
+          "crew_by_trade": {
+            "MEP_HVAC": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-055",
+      "name": "Chiller & Cooling Plant Pkg 06 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-053",
+        "P6-MEP-032"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 192,
+      "baseline_end_day": 203,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.607,
+          "crew_by_trade": {
+            "HV_ELEC": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.996,
+          "crew_by_trade": {
+            "HV_ELEC": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.755,
+          "crew_by_trade": {
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-056",
+      "name": "Chiller & Cooling Plant Pkg 07 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-MEP-039",
+        "P6-MEP-049"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 213,
+      "baseline_end_day": 232,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 19,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.588,
+          "crew_by_trade": {
+            "MEP_HVAC": 12,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.984,
+          "crew_by_trade": {
+            "MEP_HVAC": 19,
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 1.554,
+          "crew_by_trade": {
+            "MEP_HVAC": 5,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-057",
+      "name": "Chiller & Cooling Plant Pkg 08 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-MEP-039"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 203,
+      "baseline_end_day": 220,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.562,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.947,
+          "crew_by_trade": {
+            "HV_ELEC": 26,
+            "MEP_HVAC": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.621,
+          "crew_by_trade": {
+            "HV_ELEC": 8,
+            "MEP_HVAC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-058",
+      "name": "Chiller & Cooling Plant Pkg 09 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-057",
+        "P6-MEP-040",
+        "P6-MEP-044"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 220,
+      "baseline_end_day": 237,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 10,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.564,
+          "crew_by_trade": {
+            "MEP_HVAC": 10,
+            "HV_ELEC": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 1.18,
+          "crew_by_trade": {
+            "MEP_HVAC": 16,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.508,
+          "crew_by_trade": {
+            "MEP_HVAC": 4,
+            "HV_ELEC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-059",
+      "name": "Chiller & Cooling Plant Pkg 10 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-MEP-033",
+        "P6-MEP-047"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 220,
+      "baseline_end_day": 231,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.323,
+          "crew_by_trade": {
+            "HV_ELEC": 17,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.909,
+          "crew_by_trade": {
+            "HV_ELEC": 26,
+            "MEP_HVAC": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.216,
+          "crew_by_trade": {
+            "HV_ELEC": 8,
+            "MEP_HVAC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-060",
+      "name": "Chiller & Cooling Plant Pkg 11 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-059",
+        "P6-MEP-034"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 232,
+      "baseline_end_day": 251,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 19,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 18
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.61,
+          "crew_by_trade": {
+            "MEP_HVAC": 18
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.157,
+          "crew_by_trade": {
+            "MEP_HVAC": 28
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.595,
+          "crew_by_trade": {
+            "MEP_HVAC": 8
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-061",
+      "name": "Chiller & Cooling Plant Pkg 12 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-059",
+        "P6-MEP-045"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 231,
+      "baseline_end_day": 248,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.299,
+          "crew_by_trade": {
+            "HV_ELEC": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.632,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.11,
+          "crew_by_trade": {
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-062",
+      "name": "Chiller & Cooling Plant Pkg 13 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-COO-061",
+        "P6-MEP-041"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 248,
+      "baseline_end_day": 267,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 19,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.467,
+          "crew_by_trade": {
+            "MEP_HVAC": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.841,
+          "crew_by_trade": {
+            "MEP_HVAC": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 1.124,
+          "crew_by_trade": {
+            "MEP_HVAC": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-063",
+      "name": "Chiller & Cooling Plant Pkg 14 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-MEP-036",
+        "P6-MEP-041"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 220,
+      "baseline_end_day": 230,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.31,
+          "crew_by_trade": {
+            "HV_ELEC": 15,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.855,
+          "crew_by_trade": {
+            "HV_ELEC": 23,
+            "MEP_HVAC": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.968,
+          "crew_by_trade": {
+            "HV_ELEC": 7,
+            "MEP_HVAC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-064",
+      "name": "Chiller & Cooling Plant Pkg 15 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-063",
+        "P6-MEP-047"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 237,
+      "baseline_end_day": 245,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 13,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.692,
+          "crew_by_trade": {
+            "MEP_HVAC": 13,
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 5,
+          "incremental_cost_inr_cr": 0.997,
+          "crew_by_trade": {
+            "MEP_HVAC": 20,
+            "HV_ELEC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.799,
+          "crew_by_trade": {
+            "MEP_HVAC": 6,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-065",
+      "name": "Chiller & Cooling Plant Pkg 16 (CHILLER_YARD)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "CHILLER_YARD",
+      "predecessors": [
+        "P6-COO-063",
+        "P6-MEP-049"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 230,
+      "baseline_end_day": 242,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "MEP_HVAC": 4
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.391,
+          "crew_by_trade": {
+            "HV_ELEC": 13,
+            "MEP_HVAC": 4
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.809,
+          "crew_by_trade": {
+            "HV_ELEC": 20,
+            "MEP_HVAC": 6
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.065,
+          "crew_by_trade": {
+            "HV_ELEC": 6,
+            "MEP_HVAC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-066",
+      "name": "Chiller & Cooling Plant Pkg 17 (DATA_HALL_1)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-065",
+        "P6-MEP-033",
+        "P6-MEP-048"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 251,
+      "baseline_end_day": 263,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 15,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.49,
+          "crew_by_trade": {
+            "MEP_HVAC": 15,
+            "HV_ELEC": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.945,
+          "crew_by_trade": {
+            "MEP_HVAC": 23,
+            "HV_ELEC": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.723,
+          "crew_by_trade": {
+            "MEP_HVAC": 7,
+            "HV_ELEC": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-COO-067",
+      "name": "Chiller & Cooling Plant Pkg 18 (DATA_HALL_2)",
+      "wbs_stage": "COOLING",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-MEP-049"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 231,
+      "baseline_end_day": 242,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "HV_ELEC": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.372,
+          "crew_by_trade": {
+            "HV_ELEC": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 0.759,
+          "crew_by_trade": {
+            "HV_ELEC": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.958,
+          "crew_by_trade": {
+            "HV_ELEC": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-068",
+      "name": "L0-L6 Commissioning Pkg 01 (COMMISSIONING_BUS)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "COMMISSIONING_BUS",
+      "predecessors": [
+        "P6-COO-057"
+      ],
+      "fim_item_id": "BMS_PANELS",
+      "baseline_start_day": 220,
+      "baseline_end_day": 231,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "COMMISSIONING": 10,
+            "BMS_CONTROLS": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.26,
+          "crew_by_trade": {
+            "COMMISSIONING": 10,
+            "BMS_CONTROLS": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.596,
+          "crew_by_trade": {
+            "COMMISSIONING": 16,
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.143,
+          "crew_by_trade": {
+            "COMMISSIONING": 4,
+            "BMS_CONTROLS": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-069",
+      "name": "L0-L6 Commissioning Pkg 02 (DATA_HALL_1)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-053",
+        "P6-COO-061"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 248,
+      "baseline_end_day": 268,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 20,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 9,
+            "MEP_HVAC": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.414,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 9,
+            "MEP_HVAC": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.796,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 14,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 1.145,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 4,
+            "MEP_HVAC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-070",
+      "name": "L0-L6 Commissioning Pkg 03 (DATA_HALL_2)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-053",
+        "P6-COO-057"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 263,
+      "baseline_end_day": 277,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 18,
+            "COMMISSIONING": 6
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.337,
+          "crew_by_trade": {
+            "MEP_HVAC": 18,
+            "COMMISSIONING": 6
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.551,
+          "crew_by_trade": {
+            "MEP_HVAC": 28,
+            "COMMISSIONING": 9
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 1.02,
+          "crew_by_trade": {
+            "MEP_HVAC": 8,
+            "COMMISSIONING": 3
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-071",
+      "name": "L0-L6 Commissioning Pkg 04 (COMMISSIONING_BUS)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "COMMISSIONING_BUS",
+      "predecessors": [
+        "P6-COO-063",
+        "P6-COO-064",
+        "P6-L0_-069"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 268,
+      "baseline_end_day": 283,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "COMMISSIONING": 10
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.576,
+          "crew_by_trade": {
+            "COMMISSIONING": 10
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.916,
+          "crew_by_trade": {
+            "COMMISSIONING": 16
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 1.835,
+          "crew_by_trade": {
+            "COMMISSIONING": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-072",
+      "name": "L0-L6 Commissioning Pkg 05 (DATA_HALL_1)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-060"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 251,
+      "baseline_end_day": 268,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.343,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.869,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.266,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-073",
+      "name": "L0-L6 Commissioning Pkg 06 (DATA_HALL_2)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-058",
+        "P6-COO-064"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 267,
+      "baseline_end_day": 287,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 20,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 15,
+            "COMMISSIONING": 5
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 16,
+          "incremental_cost_inr_cr": 0.372,
+          "crew_by_trade": {
+            "MEP_HVAC": 15,
+            "COMMISSIONING": 5
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 0.673,
+          "crew_by_trade": {
+            "MEP_HVAC": 23,
+            "COMMISSIONING": 8
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.972,
+          "crew_by_trade": {
+            "MEP_HVAC": 7,
+            "COMMISSIONING": 2
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-074",
+      "name": "L0-L6 Commissioning Pkg 07 (COMMISSIONING_BUS)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "COMMISSIONING_BUS",
+      "predecessors": [
+        "P6-COO-057",
+        "P6-L0_-073"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 287,
+      "baseline_end_day": 304,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "COMMISSIONING": 9
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.477,
+          "crew_by_trade": {
+            "COMMISSIONING": 9
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.879,
+          "crew_by_trade": {
+            "COMMISSIONING": 14
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 1.574,
+          "crew_by_trade": {
+            "COMMISSIONING": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-075",
+      "name": "L0-L6 Commissioning Pkg 08 (DATA_HALL_1)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-055",
+        "P6-L0_-074"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 304,
+      "baseline_end_day": 313,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11,
+            "MEP_HVAC": 3
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.484,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11,
+            "MEP_HVAC": 3
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 1.046,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 17,
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.563,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5,
+            "MEP_HVAC": 1
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-076",
+      "name": "L0-L6 Commissioning Pkg 09 (DATA_HALL_2)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-059",
+        "P6-COO-060"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 277,
+      "baseline_end_day": 295,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 16
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.519,
+          "crew_by_trade": {
+            "MEP_HVAC": 16
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.744,
+          "crew_by_trade": {
+            "MEP_HVAC": 25
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.326,
+          "crew_by_trade": {
+            "MEP_HVAC": 7
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-077",
+      "name": "L0-L6 Commissioning Pkg 10 (COMMISSIONING_BUS)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "COMMISSIONING_BUS",
+      "predecessors": [
+        "P6-COO-050",
+        "P6-COO-051"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 176,
+      "baseline_end_day": 187,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 11,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "COMMISSIONING": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.501,
+          "crew_by_trade": {
+            "COMMISSIONING": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.881,
+          "crew_by_trade": {
+            "COMMISSIONING": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 1.453,
+          "crew_by_trade": {
+            "COMMISSIONING": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-078",
+      "name": "L0-L6 Commissioning Pkg 11 (DATA_HALL_1)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-055"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 203,
+      "baseline_end_day": 215,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 8
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 10,
+          "incremental_cost_inr_cr": 0.508,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 8
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.035,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 12
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 1.726,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 4
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-079",
+      "name": "L0-L6 Commissioning Pkg 12 (DATA_HALL_2)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-058"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 287,
+      "baseline_end_day": 296,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 9,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 12
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 8,
+          "incremental_cost_inr_cr": 0.405,
+          "crew_by_trade": {
+            "MEP_HVAC": 12
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 6,
+          "incremental_cost_inr_cr": 0.897,
+          "crew_by_trade": {
+            "MEP_HVAC": 19
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 7,
+          "incremental_cost_inr_cr": 1.386,
+          "crew_by_trade": {
+            "MEP_HVAC": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-080",
+      "name": "L0-L6 Commissioning Pkg 13 (COMMISSIONING_BUS)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "COMMISSIONING_BUS",
+      "predecessors": [
+        "P6-COO-057",
+        "P6-COO-066",
+        "P6-L0_-078"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 277,
+      "baseline_end_day": 297,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 20,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "COMMISSIONING": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.352,
+          "crew_by_trade": {
+            "COMMISSIONING": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 0.649,
+          "crew_by_trade": {
+            "COMMISSIONING": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.855,
+          "crew_by_trade": {
+            "COMMISSIONING": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-081",
+      "name": "L0-L6 Commissioning Pkg 14 (DATA_HALL_1)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_1",
+      "predecessors": [
+        "P6-COO-057",
+        "P6-COO-066"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 268,
+      "baseline_end_day": 286,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 18,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.309,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 11
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.627,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 17
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 14,
+          "incremental_cost_inr_cr": 1.146,
+          "crew_by_trade": {
+            "BMS_CONTROLS": 5
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    },
+    {
+      "task_id": "P6-L0_-082",
+      "name": "L0-L6 Commissioning Pkg 15 (DATA_HALL_2)",
+      "wbs_stage": "L0_L6_CX",
+      "work_front_zone": "DATA_HALL_2",
+      "predecessors": [
+        "P6-COO-050",
+        "P6-L0_-080"
+      ],
+      "fim_item_id": null,
+      "baseline_start_day": 297,
+      "baseline_end_day": 314,
+      "baseline_mode": "NORMAL",
+      "available_modes": [
+        {
+          "mode": "NORMAL",
+          "duration_days": 17,
+          "incremental_cost_inr_cr": 0.0,
+          "crew_by_trade": {
+            "MEP_HVAC": 18,
+            "COMMISSIONING": 6
+          },
+          "churn_penalty": 0.0
+        },
+        {
+          "mode": "OVERTIME",
+          "duration_days": 15,
+          "incremental_cost_inr_cr": 0.455,
+          "crew_by_trade": {
+            "MEP_HVAC": 18,
+            "COMMISSIONING": 6
+          },
+          "churn_penalty": 0.3
+        },
+        {
+          "mode": "DOUBLE_SHIFT",
+          "duration_days": 12,
+          "incremental_cost_inr_cr": 0.793,
+          "crew_by_trade": {
+            "MEP_HVAC": 28,
+            "COMMISSIONING": 9
+          },
+          "churn_penalty": 0.7
+        },
+        {
+          "mode": "ALT_SUBCONTRACTOR",
+          "duration_days": 13,
+          "incremental_cost_inr_cr": 1.186,
+          "crew_by_trade": {
+            "MEP_HVAC": 8,
+            "COMMISSIONING": 3
+          },
+          "churn_penalty": 1.0
+        }
+      ]
+    }
+  ],
+  "constraints": {
+    "site_name": "Synthetic DC West-3",
+    "target_rfs_day": 314,
+    "ld_grace_days": 5,
+    "ld_rate_inr_cr_per_day": 0.72,
+    "kronos_daily_cap": {
+      "CIVIL": 46,
+      "MEP_HVAC": 39,
+      "HV_ELEC": 41,
+      "BMS_CONTROLS": 27,
+      "COMMISSIONING": 31
+    },
+    "fim_base_arrival_day": {
+      "HV_SWITCHGEAR": 66,
+      "UPS_PDU_RACKS": 75,
+      "GENSET_BANK": 109,
+      "CHILLER_PLANT_A": 83,
+      "CHILLER_PLANT_B": 122,
+      "BMS_PANELS": 217
+    },
+    "zone_max_concurrent": {
+      "SUBSTRUCTURE": 3,
+      "DATA_HALL_1": 4,
+      "DATA_HALL_2": 4,
+      "CHILLER_YARD": 3,
+      "SUBSTATION_HV": 3,
+      "COMMISSIONING_BUS": 3
+    },
+    "max_recovery_budget_inr_cr": 19.3
+  },
+  "disruption": {
+    "event_id": "EVT-T04",
+    "scenario_type": "COOLING_SPEC_CHANGE",
+    "summary": "Mid-build customer spec change (Water-to-Air cooling redesign) adding 3 rework packages & 26d chiller slip",
+    "trigger_day": 88,
+    "fim_arrival_overrides": {
+      "CHILLER_PLANT_A": 105,
+      "CHILLER_PLANT_B": 148
+    },
+    "duration_multipliers": {
+      "P6-COO-051": 1.35,
+      "P6-COO-052": 1.35,
+      "P6-COO-053": 1.35,
+      "P6-COO-054": 1.35
+    },
+    "cost_shock_multiplier": 1.18,
+    "manpower_cap_overrides": {},
+    "added_rework_tasks": [
+      {
+        "task_id": "P6-RWK-901",
+        "name": "Water-to-Air Cooling Redesign & CFD Sign-off",
+        "wbs_stage": "COOLING",
+        "work_front_zone": "CHILLER_YARD",
+        "predecessors": [
+          "P6-MEP-032"
+        ],
+        "fim_item_id": null,
+        "baseline_start_day": 88,
+        "baseline_end_day": 102,
+        "baseline_mode": "NORMAL",
+        "available_modes": [
+          {
+            "mode": "NORMAL",
+            "duration_days": 14,
+            "incremental_cost_inr_cr": 0.0,
+            "crew_by_trade": {
+              "MEP_HVAC": 10,
+              "BMS_CONTROLS": 3
+            },
+            "churn_penalty": 0.0
+          },
+          {
+            "mode": "OVERTIME",
+            "duration_days": 12,
+            "incremental_cost_inr_cr": 0.449,
+            "crew_by_trade": {
+              "MEP_HVAC": 10,
+              "BMS_CONTROLS": 3
+            },
+            "churn_penalty": 0.3
+          },
+          {
+            "mode": "DOUBLE_SHIFT",
+            "duration_days": 9,
+            "incremental_cost_inr_cr": 0.935,
+            "crew_by_trade": {
+              "MEP_HVAC": 16,
+              "BMS_CONTROLS": 5
+            },
+            "churn_penalty": 0.7
+          },
+          {
+            "mode": "ALT_SUBCONTRACTOR",
+            "duration_days": 11,
+            "incremental_cost_inr_cr": 1.301,
+            "crew_by_trade": {
+              "MEP_HVAC": 4,
+              "BMS_CONTROLS": 1
+            },
+            "churn_penalty": 1.0
+          }
+        ]
+      },
+      {
+        "task_id": "P6-RWK-902",
+        "name": "Data Hall 2 Air-Cooled Plenum & Duct Rework",
+        "wbs_stage": "COOLING",
+        "work_front_zone": "DATA_HALL_2",
+        "predecessors": [
+          "P6-RWK-901"
+        ],
+        "fim_item_id": "CHILLER_PLANT_B",
+        "baseline_start_day": 102,
+        "baseline_end_day": 120,
+        "baseline_mode": "NORMAL",
+        "available_modes": [
+          {
+            "mode": "NORMAL",
+            "duration_days": 18,
+            "incremental_cost_inr_cr": 0.0,
+            "crew_by_trade": {
+              "MEP_HVAC": 14,
+              "HV_ELEC": 4
+            },
+            "churn_penalty": 0.0
+          },
+          {
+            "mode": "OVERTIME",
+            "duration_days": 15,
+            "incremental_cost_inr_cr": 0.547,
+            "crew_by_trade": {
+              "MEP_HVAC": 14,
+              "HV_ELEC": 4
+            },
+            "churn_penalty": 0.3
+          },
+          {
+            "mode": "DOUBLE_SHIFT",
+            "duration_days": 12,
+            "incremental_cost_inr_cr": 1.109,
+            "crew_by_trade": {
+              "MEP_HVAC": 22,
+              "HV_ELEC": 6
+            },
+            "churn_penalty": 0.7
+          },
+          {
+            "mode": "ALT_SUBCONTRACTOR",
+            "duration_days": 14,
+            "incremental_cost_inr_cr": 1.95,
+            "crew_by_trade": {
+              "MEP_HVAC": 6,
+              "HV_ELEC": 2
+            },
+            "churn_penalty": 1.0
+          }
+        ]
+      },
+      {
+        "task_id": "P6-RWK-903",
+        "name": "Revised Cooling Controls & L3 Integration Re-Test",
+        "wbs_stage": "L0_L6_CX",
+        "work_front_zone": "COMMISSIONING_BUS",
+        "predecessors": [
+          "P6-RWK-902",
+          "P6-L0_-068"
+        ],
+        "fim_item_id": "BMS_PANELS",
+        "baseline_start_day": 120,
+        "baseline_end_day": 134,
+        "baseline_mode": "NORMAL",
+        "available_modes": [
+          {
+            "mode": "NORMAL",
+            "duration_days": 14,
+            "incremental_cost_inr_cr": 0.0,
+            "crew_by_trade": {
+              "COMMISSIONING": 11,
+              "BMS_CONTROLS": 3
+            },
+            "churn_penalty": 0.0
+          },
+          {
+            "mode": "OVERTIME",
+            "duration_days": 12,
+            "incremental_cost_inr_cr": 0.451,
+            "crew_by_trade": {
+              "COMMISSIONING": 11,
+              "BMS_CONTROLS": 3
+            },
+            "churn_penalty": 0.3
+          },
+          {
+            "mode": "DOUBLE_SHIFT",
+            "duration_days": 10,
+            "incremental_cost_inr_cr": 1.085,
+            "crew_by_trade": {
+              "COMMISSIONING": 17,
+              "BMS_CONTROLS": 5
+            },
+            "churn_penalty": 0.7
+          },
+          {
+            "mode": "ALT_SUBCONTRACTOR",
+            "duration_days": 11,
+            "incremental_cost_inr_cr": 1.379,
+            "crew_by_trade": {
+              "COMMISSIONING": 5,
+              "BMS_CONTROLS": 1
+            },
+            "churn_penalty": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}

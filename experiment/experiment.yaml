@@ -1,0 +1,41 @@
+title: "Adani DC Multi-Objective Schedule Recovery Solver"
+problem_description: |
+  Evolve a fast, deterministic Python scheduling solver `generate_recovery_plans(scenario, max_plans=5)`
+  for hyperscale Data Centre capital projects (80-116 Primavera P6 tasks across Civil, Core & Shell,
+  HV Power/UPS, Cooling Plant, and L0-L6 Commissioning).
+
+  Each task has 4 execution modes in `task.available_modes`:
+    - NORMAL: baseline duration, 0 cost, 0 churn
+    - OVERTIME: ~18% faster, low cost, 1.0x Kronos crew, 0.3 churn
+    - DOUBLE_SHIFT: ~32% faster, medium cost, 1.55x Kronos crew (pressures Kronos caps!), 0.7 churn
+    - ALT_SUBCONTRACTOR: ~25% faster, higher cost, 0.45x Kronos crew (relieves Kronos bottlenecks!), 1.0 churn
+
+  Given a `Scenario` containing mid-build disruptions (30-day FIM equipment slips, 20-30% cost shocks,
+  water-to-air cooling redesign rework tasks, or Kronos manpower dips), return 3 to 5 strictly feasible,
+  Pareto-diverse `RecoveryPlan` objects that maximize `pareto_hypervolume_score` across 4 normalized KPIs:
+    1. RFS schedule days recovered (maximize)
+    2. Incremental recovery cost efficiency within `max_recovery_budget_inr_cr` (minimize cost)
+    3. Contractual Liquidated Damages avoided (maximize)
+    4. Workforce stability / low crew churn (minimize churn)
+
+  Hard feasibility rules (ANY single violation returns score=None):
+    - Schedule every active task in `scenario.active_tasks()` exactly once.
+    - Completed tasks (`baseline_end_day <= disruption.trigger_day`, non-rework) stay frozen.
+    - Respect all P6 Finish-to-Start predecessors, FIM arrival dates, daily Kronos trade caps
+      (`scenario.effective_kronos_cap(trade, day)`), work-front zone concurrency limits, and recovery budget cap.
+    - Complete each scenario in well under 2.0 seconds (pure Python standard library only).
+program_language: "python"
+primary_metric: "pareto_hypervolume_score"
+initial_score: 0.293436
+seed_files:
+  - "solver.py"
+  - "schema.py"
+generation_settings:
+  include_full_program_in_prompt: true
+evolution_settings:
+  parent_sampling_config:
+    pareto_sampling_config:
+      pareto_sampling_probability: 0.35
+evaluator:
+  script: "evaluator.py"
+  method: "evaluate_dc_recovery"
