@@ -43,7 +43,7 @@ class TestAlphaEvolveClientPayloads(unittest.TestCase):
         self.assertNotIn("Navi Mumbai DC-2", raw_payload)
         self.assertNotIn("train_scenarios", raw_payload)
         paths = [f["path"] for f in init_prog["content"]["files"]]
-        self.assertEqual(paths, ["solver.py", "schema.py"])
+        self.assertEqual(paths, ["solver.py"])
 
     def test_fix_multi_files_program_unflattens_wire_response(self) -> None:
         flat = (
@@ -67,6 +67,18 @@ class TestAlphaEvolveClientPayloads(unittest.TestCase):
         self.assertIn("effective_fim_arrival_day", prompt)
         self.assertIn("zone_max_concurrent", prompt)
         self.assertIn("max_recovery_budget_inr_cr", prompt)
+
+    def test_truncated_llm_json_recovers_partial_assignments_cleanly(self) -> None:
+        truncated = (
+            '{"plan_label": "Demo", "assignments": ['
+            '{"task_id": "P6-001", "start_day": 0, "end_day": 10, "selected_mode": "NORMAL"},'
+            '{"task_id": "P6-002", "start_day": 10, "end_day": 20, "selected_mode": "OVER'
+        )
+        parsed, note = run_llm_baseline._parse_json_or_recover_assignments(truncated, finish_reason="MAX_TOKENS")
+        self.assertIsNotNone(note)
+        self.assertIn("MAX_TOKENS", note)
+        self.assertEqual(len(parsed["assignments"]), 1)
+        self.assertEqual(parsed["assignments"][0]["task_id"], "P6-001")
 
 
 if __name__ == "__main__":

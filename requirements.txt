@@ -1,9 +1,9 @@
-# Optional dependencies (all core scripts in Step 1 also run cleanly on Python 3 stdlib + gcloud CLI)
+# Core CLI & AlphaEvolve scripts also run on Python 3 stdlib + gcloud CLI.
+# Install these for the 2-tab CXO Streamlit UI (`streamlit run app.py`).
+streamlit>=1.40.0
+plotly>=5.24.0
+pandas>=2.2.0
 google-auth>=2.35.0
 requests>=2.32.0
 pyyaml>=6.0.2
 pytest>=8.3.0
-# Step 2 (Streamlit UI — install when adding app.py)
-# streamlit>=1.40.0
-# plotly>=5.24.0
-# pandas>=2.2.0

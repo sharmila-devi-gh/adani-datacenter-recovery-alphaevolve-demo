@@ -106,7 +106,6 @@ def build_experiment_payloads(
 ) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     """Construct verified AlphaEvolve experiment config + initial program payloads."""
     solver_code = (EXP_DIR / "solver.py").read_text(encoding="utf-8")
-    schema_code = (EXP_DIR / "schema.py").read_text(encoding="utf-8")
     validate_evolve_block_markers(solver_code, "solver.py")
 
     # Read problem_description directly from experiment.yaml (no external PyYAML required!)
@@ -138,7 +137,8 @@ def build_experiment_payloads(
         "problem_description": problem_desc,
         "program_language": "python",
         "run_settings": {
-            "max_programs": max_programs,
+            # Note: seed program counts toward max_programs in AlphaEvolve backend
+            "max_programs": max_programs + 1,
             "concurrency": concurrency,
             "max_duration": "7200s",
             "idle_timeout": "3600s",
@@ -156,11 +156,11 @@ def build_experiment_payloads(
         },
     }
 
+    # Single-file seed keeps prompt small (~3.5k tokens) and avoids multi-file diff parse failures
     initial_program: Dict[str, Any] = {
         "content": {
             "files": [
                 {"path": "solver.py", "content": solver_code},
-                {"path": "schema.py", "content": schema_code},
             ]
         },
         "evaluation": seed_eval,
@@ -231,19 +231,19 @@ def main() -> int:
     parser.add_argument("--location", default="global", help="Discovery Engine location (global/us/eu)")
     parser.add_argument(
         "--model",
-        default="gemini-3.8-flash:0.6;gemini-3.1-pro-preview:0.4",
-        help="AlphaEvolve model or weighted mixture (capped Pro model <= 0.5)",
+        default="gemini-3.8-flash",
+        help="AlphaEvolve model or weighted mixture (default: newest GA gemini-3.8-flash)",
     )
     parser.add_argument("--max-programs", type=int, default=30, help="Max candidate programs to evaluate")
     parser.add_argument("--concurrency", type=int, default=2, help="Parallel generation concurrency")
-    parser.add_argument("--poll-interval", type=float, default=4.0, help="Seconds between acquirePrograms polls")
+    parser.add_argument("--poll-interval", type=float, default=10.0, help="Seconds between acquirePrograms polls")
     parser.add_argument("--smoke", action="store_true", help="Quick 5-program live smoke test")
     parser.add_argument("--dry-run", action="store_true", help="Offline local validation only (zero GCP API calls)")
     args = parser.parse_args()
 
     if args.smoke:
         args.max_programs = 5
-        args.concurrency = 1
+        args.concurrency = 2
 
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
     seed_code = (EXP_DIR / "solver.py").read_text(encoding="utf-8")
@@ -333,7 +333,7 @@ def main() -> int:
     best_program_name = init_prog_name
     evaluated_count = 0
     empty_polls = 0
-    max_empty_polls = 45
+    max_empty_polls = 60
 
     experiment_meta = {
         "project_id": args.project_id,
@@ -369,8 +369,14 @@ def main() -> int:
 
         if not programs:
             empty_polls += 1
-            exp_state = client.get_experiment(experiment_name).get("state")
-            print(f"  [poll {empty_polls}] No ready candidates yet (state={exp_state}); waiting {args.poll_interval:.0f}s...")
+            exp_obj = client.get_experiment(experiment_name)
+            exp_state = exp_obj.get("state")
+            st = exp_obj.get("stats", {})
+            print(
+                f"  [poll {empty_polls}] No ready candidates yet "
+                f"(state={exp_state}, cands={st.get('candidatesCount', '?')}, "
+                f"out_tok={st.get('outputTokenCount', 0)}); waiting {args.poll_interval:.0f}s..."
+            )
             if exp_state in ("COMPLETED", "FAILED") or empty_polls >= max_empty_polls:
                 print(f"  Stopping polling (state={exp_state}, empty_polls={empty_polls}).")
                 break
@@ -431,7 +437,9 @@ def main() -> int:
                 }
             )
 
-        client.submit_program_evaluations(experiment_name, submissions)
+        # Per AlphaEvolve API reference, submit evaluations individually (one per RPC)
+        for sub in submissions:
+            client.submit_program_evaluations(experiment_name, [sub])
         experiment_meta["best_program_name"] = best_program_name
         experiment_meta["best_train_score"] = best_score
         experiment_meta["evaluated_count"] = evaluated_count

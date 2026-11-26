@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import ssl
 import subprocess
 import time
 import urllib.error
@@ -26,11 +27,49 @@ import urllib.request
 from typing import Any, Dict, List, Optional
 
 
+def build_ssl_context() -> ssl.SSLContext:
+    """Create a verified TLS SSLContext that works reliably on macOS Python installs."""
+    for env_var in ("SSL_CERT_FILE", "REQUESTS_CA_BUNDLE"):
+        ca_path = os.environ.get(env_var)
+        if ca_path and os.path.isfile(ca_path):
+            return ssl.create_default_context(cafile=ca_path)
+
+    try:
+        import certifi  # type: ignore
+
+        ca_path = certifi.where()
+        if ca_path and os.path.isfile(ca_path):
+            return ssl.create_default_context(cafile=ca_path)
+    except Exception:
+        pass
+
+    for sys_ca in ("/etc/ssl/cert.pem", "/etc/ssl/certs/ca-certificates.crt"):
+        if os.path.isfile(sys_ca):
+            return ssl.create_default_context(cafile=sys_ca)
+
+    return ssl.create_default_context()
+
+
 def get_gcp_access_token() -> str:
-    """Acquire an OAuth2 access token via ADC or gcloud CLI fallback."""
+    """Acquire an OAuth2 access token, preferring ADC (required on Google corp mTLS/CBA Macs)."""
     env_token = os.environ.get("GCP_ACCESS_TOKEN")
     if env_token:
         return env_token.strip()
+
+    # Prefer Application Default Credentials (ADC) first: under Google corp
+    # Certificate-Based Access (go/gcloud-mtls-rollout), `gcloud auth print-access-token`
+    # yields an mTLS-bound token that plain HTTPS clients reject with 401
+    # ACCESS_TOKEN_TYPE_UNSUPPORTED, whereas ADC tokens work cleanly everywhere.
+    for cmd in (
+        ["gcloud", "auth", "application-default", "print-access-token"],
+        ["gcloud", "auth", "print-access-token"],
+    ):
+        try:
+            out = subprocess.check_output(cmd, text=True, stderr=subprocess.DEVNULL).strip()
+            if out:
+                return out
+        except Exception:
+            continue
 
     try:
         import google.auth  # type: ignore
@@ -45,21 +84,9 @@ def get_gcp_access_token() -> str:
     except Exception:
         pass
 
-    # Clean fallback for Cloud Shell / local gcloud login
-    for cmd in (
-        ["gcloud", "auth", "application-default", "print-access-token"],
-        ["gcloud", "auth", "print-access-token"],
-    ):
-        try:
-            out = subprocess.check_output(cmd, text=True, stderr=subprocess.DEVNULL).strip()
-            if out:
-                return out
-        except Exception:
-            continue
-
     raise RuntimeError(
-        "Unable to acquire GCP access token. Run `gcloud auth login` and "
-        "`gcloud auth application-default login` (or run inside Cloud Shell)."
+        "Unable to acquire GCP access token. Run `gcloud auth application-default login` "
+        "and `gcloud auth application-default set-quota-project sd-proj-382223`."
     )
 
 
@@ -160,7 +187,7 @@ class AlphaEvolveRestClient:
         data_bytes = json.dumps(payload).encode("utf-8") if payload is not None else None
         req = urllib.request.Request(url, data=data_bytes, headers=self._headers(), method=method)
         try:
-            with urllib.request.urlopen(req, timeout=self.timeout_sec) as resp:
+            with urllib.request.urlopen(req, timeout=self.timeout_sec, context=build_ssl_context()) as resp:
                 raw = resp.read().decode("utf-8")
                 return json.loads(raw) if raw.strip() else {}
         except urllib.error.HTTPError as exc:
@@ -168,22 +195,25 @@ class AlphaEvolveRestClient:
             raise AlphaEvolveAPIError(exc.code, url, err_body) from exc
 
     def create_session(self) -> str:
-        """Create a Gemini Enterprise session via default_assistant:streamAssist."""
-        url = f"{self.base_url}/v1alpha/{self.base_path}/assistants/{self.assistant_id}:streamAssist"
+        """Create a Discovery Engine session directly via CreateSession RPC.
+
+        Uses `POST .../engines/{engine}/sessions` (matching the official
+        AlphaEvolve CLI) instead of `:streamAssist` so zero text-generation
+        Enterprise Plus quota is consumed.
+        """
+        url = f"{self.base_url}/v1alpha/{self.base_path}/sessions"
         resp = self._request(
             "POST",
             url,
             payload={
-                "query": {"text": "starting alpha evolve query"},
-                "assistSkippingMode": "REQUEST_ASSIST",
+                "display_name": "AlphaEvolve Session",
+                "labels": ["alpha-evolve"],
             },
         )
-        answers = resp if isinstance(resp, list) else [resp]
-        for ans in answers:
-            sess = ans.get("sessionInfo", {}).get("session")
-            if sess:
-                return str(sess)
-        raise RuntimeError(f"Could not extract sessionInfo.session from streamAssist response: {resp}")
+        sess = resp.get("name") if isinstance(resp, dict) else None
+        if sess:
+            return str(sess)
+        raise RuntimeError(f"Could not extract session name from CreateSession response: {resp}")
 
     def create_experiment(self, session_name: str, exp_config: Dict[str, Any]) -> Dict[str, Any]:
         url = f"{self.base_url}/v1alpha/{session_name}/alphaEvolveExperiments"

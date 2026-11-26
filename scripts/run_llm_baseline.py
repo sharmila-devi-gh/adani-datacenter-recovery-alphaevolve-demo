@@ -2,7 +2,7 @@
 """Fair, apples-to-apples Pure LLM (Gemini) DC Recovery Baseline + Verifier Audit.
 
 Sends the exact same held-out Data Centre scenario JSON (H01 / H02 / etc.) to
-Vertex AI Gemini (default: gemini-2.5-pro) with strict structured JSON output and
+Vertex AI Gemini (default: gemini-3.8-flash on global) with strict structured JSON output and
 audits Gemini's returned schedule through the EXACT same 5-gate `verifier.py`
 used to grade AlphaEvolve solvers.
 
@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -29,7 +30,7 @@ ARTIFACTS_DIR = REPO_ROOT / "artifacts"
 sys.path.insert(0, str(EXP_DIR))
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from alphaevolve_client import get_gcp_access_token
+from alphaevolve_client import build_ssl_context, get_gcp_access_token
 import evaluator
 from schema import RecoveryPlan, Scenario, TaskAssignment
 from verifier import compute_unmitigated_rfs_and_ld, verify_plan
@@ -111,12 +112,35 @@ def build_fair_llm_prompt(scenario: Scenario, prior_violations: Optional[List[st
     )
 
 
+def _parse_json_or_recover_assignments(text: str, finish_reason: str = "") -> Tuple[Dict[str, Any], Optional[str]]:
+    """Parse strict JSON schedule, or recover partial assignments if LLM truncated mid-output."""
+    try:
+        return json.loads(text), None
+    except json.JSONDecodeError as exc:
+        # Recover any complete task assignment dicts emitted before truncation
+        recovered: List[Dict[str, Any]] = []
+        obj_pat = re.compile(r"\{[^{}]*\"task_id\"[^{}]*\}")
+        for m in obj_pat.finditer(text):
+            try:
+                item = json.loads(m.group(0))
+                if all(k in item for k in ("task_id", "start_day", "end_day", "selected_mode")):
+                    recovered.append(item)
+            except json.JSONDecodeError:
+                continue
+        reason = finish_reason or "JSON_TRUNCATED"
+        note = (
+            f"LLM response truncated ({reason}, {len(recovered)} complete task assignments emitted "
+            f"before malformed JSON: {exc.msg})"
+        )
+        return {"plan_label": "PureLLM_Truncated", "assignments": recovered}, note
+
+
 def call_vertex_gemini_json(
     project_id: str,
     location: str,
     model_name: str,
     prompt: str,
-) -> Tuple[Dict[str, Any], Dict[str, Any], float]:
+) -> Tuple[Dict[str, Any], Dict[str, Any], float, Optional[str]]:
     """Invoke Vertex AI Gemini generateContent with strict JSON responseSchema."""
     response_schema = {
         "type": "OBJECT",
@@ -147,14 +171,20 @@ def call_vertex_gemini_json(
         f"https://{host}/v1/projects/{project_id}/locations/{location}"
         f"/publishers/google/models/{model_name}:generateContent"
     )
+    gen_config: Dict[str, Any] = {
+        "temperature": 0.1,
+        "maxOutputTokens": 65536,
+        "responseMimeType": "application/json",
+        "responseSchema": response_schema,
+    }
+    # Gemini 3.x models default to HIGH thinking, which can consume output budget
+    # and truncate 100-task JSON schedules; use LOW thinking for fast, complete JSON.
+    if model_name.startswith("gemini-3"):
+        gen_config["thinkingConfig"] = {"thinkingLevel": "LOW"}
+
     body = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature": 0.1,
-            "maxOutputTokens": 16384,
-            "responseMimeType": "application/json",
-            "responseSchema": response_schema,
-        },
+        "generationConfig": gen_config,
     }
     headers = {
         "Authorization": f"Bearer {get_gcp_access_token()}",
@@ -165,7 +195,7 @@ def call_vertex_gemini_json(
     t0 = time.perf_counter()
     req = urllib.request.Request(url, data=json.dumps(body).encode("utf-8"), headers=headers, method="POST")
     try:
-        with urllib.request.urlopen(req, timeout=180.0) as resp:
+        with urllib.request.urlopen(req, timeout=180.0, context=build_ssl_context()) as resp:
             raw = json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         err_txt = exc.read().decode("utf-8", errors="replace")
@@ -176,9 +206,16 @@ def call_vertex_gemini_json(
     candidates = raw.get("candidates", [])
     if not candidates:
         raise RuntimeError(f"Gemini returned no candidates: {raw}")
-    text = candidates[0]["content"]["parts"][0]["text"]
-    parsed = json.loads(text)
-    return parsed, usage, elapsed_ms
+    finish_reason = str(candidates[0].get("finishReason", ""))
+    parts = candidates[0].get("content", {}).get("parts", [])
+    text_parts = [p["text"] for p in parts if isinstance(p, dict) and "text" in p and not p.get("thought")]
+    if not text_parts:
+        text_parts = [p["text"] for p in parts if isinstance(p, dict) and "text" in p]
+    if not text_parts:
+        raise RuntimeError(f"Gemini returned no text parts: {candidates[0]}")
+    text = "".join(text_parts).strip()
+    parsed, truncation_note = _parse_json_or_recover_assignments(text, finish_reason=finish_reason)
+    return parsed, usage, elapsed_ms, truncation_note
 
 
 def run_llm_on_scenario(
@@ -198,7 +235,9 @@ def run_llm_on_scenario(
     for attempt in range(1, max_attempts + 1):
         prompt = build_fair_llm_prompt(scenario, prior_violations=prior_violations)
         try:
-            parsed, usage, elapsed_ms = call_vertex_gemini_json(project_id, location, model_name, prompt)
+            parsed, usage, elapsed_ms, truncation_note = call_vertex_gemini_json(
+                project_id, location, model_name, prompt
+            )
             total_latency_ms += elapsed_ms
             asgn_map: Dict[str, TaskAssignment] = {}
             for row in parsed.get("assignments", []):
@@ -217,20 +256,26 @@ def run_llm_on_scenario(
             gate_counts: Dict[str, int] = {}
             for v in pm.violations:
                 gate_counts[v.gate] = gate_counts.get(v.gate, 0) + 1
+            sample_viols = [f"[{v.gate}] {v.message}" for v in pm.violations[:8]]
+            if truncation_note:
+                sample_viols = [f"[COMPLETENESS] {truncation_note}"] + sample_viols[:7]
+                if "COMPLETENESS" not in gate_counts:
+                    gate_counts["COMPLETENESS"] = 1
 
             attempt_summary = {
                 "attempt": attempt,
-                "feasible": pm.feasible,
+                "feasible": pm.feasible and not truncation_note,
                 "latency_ms": round(elapsed_ms, 1),
                 "usage": usage,
                 "rfs_day": pm.rfs_day,
                 "rfs_days_recovered": pm.rfs_days_recovered,
                 "incremental_cost_inr_cr": pm.incremental_cost_inr_cr,
+                "ld_cost_inr_cr": pm.ld_cost_inr_cr,
                 "ld_avoided_inr_cr": pm.ld_avoided_inr_cr,
                 "mean_churn": pm.mean_churn,
-                "violation_count": len(pm.violations),
+                "violation_count": len(pm.violations) if pm.violations else (1 if truncation_note else 0),
                 "violations_by_gate": gate_counts,
-                "sample_violations": [f"[{v.gate}] {v.message}" for v in pm.violations[:8]],
+                "sample_violations": sample_viols,
             }
             attempts_log.append(attempt_summary)
             final_result = attempt_summary
@@ -246,6 +291,7 @@ def run_llm_on_scenario(
                 "violation_count": 1,
                 "violations_by_gate": {"LLM_PARSE_OR_API_ERROR": 1},
                 "sample_violations": [str(exc)[:600]],
+                "api_error": str(exc)[:600],
             }
             attempts_log.append(err_summary)
             final_result = err_summary
@@ -268,9 +314,9 @@ def run_llm_on_scenario(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run fair Pure LLM (Gemini) DC scheduling baseline.")
-    parser.add_argument("--project-id", default="project-3zcmvkwmrw953", help="GCP Project ID")
-    parser.add_argument("--location", default="us-central1", help="Vertex AI region (e.g., us-central1 or global)")
-    parser.add_argument("--model", default="gemini-2.5-pro", help="Vertex AI Gemini model ID")
+    parser.add_argument("--project-id", default="sd-proj-382223", help="GCP Project ID")
+    parser.add_argument("--location", default="global", help="Vertex AI region (e.g., global or us-central1)")
+    parser.add_argument("--model", default="gemini-3.8-flash", help="Vertex AI Gemini model ID")
     parser.add_argument(
         "--scenarios",
         default="H01,H02",

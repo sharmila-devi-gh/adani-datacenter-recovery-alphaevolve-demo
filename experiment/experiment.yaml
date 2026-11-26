@@ -29,7 +29,6 @@ primary_metric: "pareto_hypervolume_score"
 initial_score: 0.293436
 seed_files:
   - "solver.py"
-  - "schema.py"
 generation_settings:
   include_full_program_in_prompt: true
 evolution_settings:

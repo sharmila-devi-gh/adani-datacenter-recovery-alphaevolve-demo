@@ -89,6 +89,29 @@ python3 scripts/run_llm_baseline.py \
 python3 scripts/run_benchmark.py
 ```
 
+### 5. Launch the CXO Streamlit Executive Demo UI (`app.py`)
+Install the UI dependencies inside a virtual environment and launch Streamlit:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m streamlit run app.py
+```
+
+- **In Cloud Shell:** Run `.venv/bin/python -m streamlit run app.py --server.port 8080`, then click **Web Preview (top-right) → Preview on port 8080**.
+- **On Your Mac:** Open `http://localhost:8501`.
+- **Optional — Deploy to Cloud Run (`sd-proj-382223`):**
+  ```bash
+  gcloud services enable run.googleapis.com artifactregistry.googleapis.com --project=sd-proj-382223
+  gcloud run deploy dc-recovery-alphaevolve-ui \
+    --source . \
+    --dockerfile Dockerfile.streamlit \
+    --region asia-south1 \
+    --project sd-proj-382223
+  ```
+
+The single-page executive UI automatically loads your live `artifacts/evolved_solver.py` and `artifacts/llm_baseline_result.json` as soon as they exist (and provides a clearly labeled verified preview reference solver so you can rehearse immediately).
+
 ---
 
 ## Hard Feasibility Gates Audited Identically Across All 3 Approaches (`experiment/verifier.py`)
